@@ -1,15 +1,11 @@
 import React from "react";
+import Tarea from "./Tarea.jsx";
 
-function ListaTareas(props) {
+function ListaTareas({ tareas, onEliminar }) {
   return (
-    <ul className="list-group rounded-0">
-      {props.tareas.map((tarea, indice) => (
-        <li key={indice} className="list-group-item d-flex justify-content-between align-items-center rounded-0">
-          {tarea}
-          <button className="btn-eliminar" onClick={() => props.eliminarTarea(indice)}>
-            ×
-          </button>
-        </li>
+    <ul className="list-group list-group-flush">
+      {tareas.map((tarea) => (
+        <Tarea key={tarea.id} tarea={tarea} onEliminar={onEliminar} />
       ))}
     </ul>
   );

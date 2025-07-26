@@ -91,18 +91,33 @@ body {
 }
 
 .btn-eliminar {
-  visibility: hidden;
+  opacity:0;
   color: #cc9a9a;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 30px;
+  position: absolute;
+  right: 10px;
+  top:5%;
 }
 
 .list-group-item:hover .btn-eliminar {
-  visibility: visible;
+  opacity:1;
 }
 
 .btn-eliminar:hover {
   color: #af5b5e;
 }
+
+
+.btn-limpiar-personalizado {
+  background-color: #af5b5e;
+  border-color: #af5b5e;
+  color: #fff;
+}
+.btn-limpiar-personalizado:hover {
+  background-color: #994952;
+  border-color: #994952;
+}
+

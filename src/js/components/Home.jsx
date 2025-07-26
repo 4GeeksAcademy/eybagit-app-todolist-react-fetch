@@ -1,14 +1,10 @@
 import React from "react";
-import TodoApp from "./TodoApp";
-import useTareas from "./useTareas.jsx";
+import TodoApp from "./TodoApp.jsx";
+import useTareasApi from "../hooks/useTareasApi.jsx";
 
 function Home() {
-  const { tareas, agregarTarea, eliminarTarea } = useTareas([
-    "Tender la cama",
-    "Lavarme las manos",
-    "Comer",
-    "Pasear al perro",
-  ]);
+  const { tareas, agregarTarea, eliminarTarea, limpiarTareas } =
+    useTareasApi();
 
   return (
     <main>
@@ -16,7 +12,8 @@ function Home() {
         <TodoApp
           tareas={tareas}
           onAgregar={agregarTarea}
-          eliminarTarea={eliminarTarea}
+          onEliminar={eliminarTarea}
+          onLimpiar={limpiarTareas}
         />
       </section>
     </main>

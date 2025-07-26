@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
- function EntradaTarea(props) {
+function EntradaTarea(props) {
   const [textoIngresado, setTextoIngresado] = useState("");
 
   function manejarCambioTexto(evento) {
@@ -10,10 +10,12 @@ import React, { useState } from "react";
   function manejarEnvioFormulario(evento) {
     evento.preventDefault();
 
-    const textoRecortado = textoIngresado.trim();
-    if (!textoRecortado) return;
+    const texto = textoIngresado.trim();
 
-    props.onAgregar(textoRecortado);
+    if (!texto) return;
+
+    props.onAgregar(texto);
+    
     setTextoIngresado("");
   }
 
