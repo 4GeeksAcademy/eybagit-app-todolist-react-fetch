@@ -1,11 +1,123 @@
-/* 
+body {
+  background: #fafafa;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.todo-container {
+  max-width: 550px;
+  margin: 50px auto;
+  text-align: center;
+}
 
-*/
+.titulo {
+  font-size: 100px;
+  font-weight: 200;
+  color: rgba(180, 124, 133, 0.185);
+  margin-bottom: 20px;
+}
+
+.lista-container {
+  background: #fff;
+  position: relative;
+
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 0 1.5px;
+}
+
+
+.lista-container::before,
+.lista-container::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.lista-container::before {
+  z-index: -1;
+  height: 95%;
+  margin: 0 5px;
+  bottom: -5px;
+}
+.lista-container::after {
+  z-index: -2;
+  height: 90%;
+  margin: 0 10px;
+  bottom: -10px;
+}
+
+.entrada-tarea,
+.list-group-item {
+  border: none;
+  font-size: 1.5rem;
+  color: #4d4d4d;
+    border-bottom: 1px solid #ededed;
+}
+
+.entrada-tarea {
+  border: none;
+  border-block: 1px solid #ededed;
+  padding: 0.9rem 1rem;
+}
+
+.entrada-tarea:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  border-block: 1px solid #ededed;
+}
+
+.list-group-item {
+  border-bottom: 1px solid #ededed;
+  text-align: left;
+  position: relative;
+}
+
+
+.entrada-tarea::placeholder {
+  color: #949494;
+}
+
+.footer {
+  color: #777777bd;
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.btn-eliminar {
+  opacity:0;
+  color: #cc9a9a;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+  right: 10px;
+  top:5%;
+}
+
+.list-group-item:hover .btn-eliminar {
+  opacity:1;
+}
+
+.btn-eliminar:hover {
+  color: #af5b5e;
+}
+
+
+.btn-limpiar-personalizado {
+  background-color: #af5b5e;
+  border-color: #af5b5e;
+  color: #fff;
+}
+.btn-limpiar-personalizado:hover {
+  background-color: #994952;
+  border-color: #994952;
+}
+
